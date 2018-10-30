@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>SVG Temprorary</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		
+		<script type="text/javascript" src="/svgTemp/svg.min.js"></script>
+		<script type="text/javascript" src="/svgTemp/svg.topath.js"></script>
+		<script type="text/javascript" src="/svgTemp/svg.select.js"></script>
+		<script type="text/javascript" src="/svgTemp/svg.resize.js"></script>
+		<script type="text/javascript" src="/svgTemp/svg.draggy.js"></script>
+		<script type="text/javascript" src="/svgTemp/svg.draw.js"></script>
+		<script type="text/javascript" src="/svgTemp/editor2.js"></script>
+		
+		<style type="text/css">
+		body {
+			background-color: gray;
+			margin:15px;
+		}
+		.drawing {
+			background: white;
+		    height: 500px;
+		}
+		.tools {
+		    height: 150px;
+		    background: white;
+		    width:50px;
+		}
+		.toolElement{
+			font-size: 50px;
+    		text-align: center;
+		}
+		.toolElement:hover {
+			background-color: #e6dfdf;
+			cursor: pointer;
+		}
+		.pathClass{
+			color:green;
+		}
+		.selectedElement {
+			    stroke-width: 1;
+			    fill: gray;
+			    stroke: black;
+			    stroke-opacity: 0.8;
+			    fill-opacity: 0.1;
+			    pointer-events: all;
+		}
+		.svg_select_boundingRect{
+			    stroke-width: 1;
+    			fill: gray;
+			    stroke: black;
+    			stroke-opacity: 0.8;
+			    fill-opacity: 0.1;
+    			pointer-events: none;
+		}
+		
+		.svg_select_points_l,.svg_select_points_r {
+			cursor: e-resize;
+		}
+		.svg_select_points_lt,.svg_select_points_rb{
+			cursor: nw-resize;
+		}
+		.svg_select_points_rt,.svg_select_points_lb{
+			cursor: ne-resize;
+		}
+		.svg_select_points_t,.svg_select_points_b{
+			cursor: ns-resize;
+		}
+		.svg_select_points_rot{
+			cursor:url(sync-alt-solid.svg) 12 12, auto
+		}
+		.polygon {
+			  fill: none;
+			  stroke: black;   
+			  stroke-width: 7px;
+		}
+		
+		.textClass {
+			font-size: 10px;
+			font-family: serif;
+			font-weight: lighter;
+		}
+		.box {
+			  fill: none;
+			  strokeWidth: 1;
+			  stroke: green;
+			}
+		</style>
+	</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="tools">
+					<div class="toolElement" onclick="putRectangleInCenter()"><i class="far fa-square"></i></div>
+					<div class="toolElement"  onclick="putTextInCenter()">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink" id="eye-Page%201"
+							viewBox="0 0 27 27" style="background-color: #ffffff00"
+							version="1.1" xml:space="preserve" x="0px" y="0px">
+							<path fill="#2F2F2C" d="M0,0v27h27V0H0z M7.283,25.258v-1.741h0.539c1.133,0,1.879-0.204,2.224-0.64c0.345-0.422,0.525-1.157,0.525-2.191V4.355H8.733c-1.105,0-1.906,0.123-2.417,0.367C5.791,4.967,5.362,5.443,5.017,6.151C4.658,6.873,4.451,7.73,4.381,8.709H2.613V2.613h21.774v6.097H22.48c-0.359-1.701-0.87-2.858-1.52-3.457s-1.686-0.898-3.108-0.898h-1.976v16.331c0,1.062,0.165,1.81,0.525,2.218c0.358,0.409,1.104,0.613,2.236,0.613h0.595v1.741H7.283z"></path>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div id="drawing" class="drawing" ></div>
+				</div>
+		</div>
+	</div>
+</body>
+</html>
